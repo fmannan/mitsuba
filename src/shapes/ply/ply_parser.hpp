@@ -66,7 +66,7 @@ public:
 
   class scalar_property_definition_callbacks_type
   {
-  private:
+  public:
     template <typename T>
     struct callbacks_element
     {
@@ -81,7 +81,7 @@ public:
       >
     >::type callbacks;
     callbacks callbacks_;
-  public:
+  //public:
     template <typename ScalarType>
     const typename scalar_property_definition_callback_type<ScalarType>::type& get() const
     {
@@ -142,7 +142,8 @@ public:
 
   class list_property_definition_callbacks_type
   {
-  private:
+  //private:
+  public:
     template <typename T> struct pair_with : boost::mpl::pair<T,boost::mpl::_> {};
     template<typename Sequence1, typename Sequence2>
     struct sequence_product :
